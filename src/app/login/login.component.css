@@ -1,0 +1,20 @@
+.login-container {
+  background-color: white;
+  /*padding:10em;*/
+  text-align: center;
+  width: 400px;
+  margin: auto;
+  padding-top: 5em;
+}
+
+button {
+  width: 100%;
+}
+
+
+@media (max-width: 600px) {
+  .login-container {
+    padding:2em;
+  }
+
+}

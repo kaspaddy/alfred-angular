@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="'navigation'"
+    [mode]="(isHandset$ | async) ? 'push' : 'side'">
+    <mat-toolbar color="primary" class="menuHeader" *ngIf="authState">
+      <!--<button-->
+      <!--type="button"-->
+      <!--aria-label="Toggle sidenava"-->
+      <!--mat-icon-button-->
+      <!--(click)="drawer.toggle()">-->
+      <!--<mat-icon aria-label="Side nav toggle icona">menu</mat-icon>-->
+      <!--</button>-->
+      <!--<span>Menu</span>-->
+      <span>Menu</span>
+      <div>
+        <mat-icon>account_circle</mat-icon>
+        <span>{{authState.email}}</span>
+      </div>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/dashboard">Dashboard</a>
+      <a mat-list-item routerLink="/weather">Wetter</a>
+      <a mat-list-item routerLink="/home">Waschmaschine</a>
+      <a mat-list-item routerLink="/home">Dart</a>
+      <a mat-list-item routerLink="/home">Trinken</a>
+      <a mat-list-item href="#">Link 3</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/login" (click)="logout()">Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="authState">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Application Title</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

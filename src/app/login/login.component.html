@@ -1,0 +1,20 @@
+<div class="login-container">
+  <span class="error" *ngIf="error">{{ error }}</span>
+
+  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+
+    <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
+    <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!formData.valid">Log in</button>
+  </form>
+
+  <div>
+    <span>or</span>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="loginGoogle()" id="google">Login With Google</button>
+  <div>
+    <a routerLink="/signup" routerLinkActive="active" class="alc">No account? <strong>Create one here</strong></a>
+  </div>
+</div>
