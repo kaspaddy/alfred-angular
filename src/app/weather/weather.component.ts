@@ -8,14 +8,18 @@ import {WeatherService} from '../weather.service';
 })
 export class WeatherComponent implements OnInit, OnDestroy {
 
-  weatherState: any;
+  temp: any;
+  maxtemp: any;
+  mintemp: any;
 
   constructor(public weather: WeatherService) {
   }
 
   ngOnInit() {
     this.weather.getCityWeatherByName('munich').then(weatherState => {
-        this.weatherState = weatherState;
+        this.temp = weatherState.main.temp;
+        this.maxtemp = weatherState.main.temp_max;
+        this.mintemp = weatherState.main.temp_min;
       }
     );
   }
