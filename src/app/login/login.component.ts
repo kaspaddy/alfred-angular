@@ -11,6 +11,8 @@ import * as firebase from 'firebase';
 export class LoginComponent implements OnInit {
 
   error: any;
+  email: any;
+  password: any;
 
   constructor(public afAuth: AngularFireAuth, private router: Router) {
     this.afAuth.user.subscribe(value => {
