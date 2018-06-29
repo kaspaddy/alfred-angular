@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AngularFireModule} from 'angularfire2';
 import {HttpClientModule} from '@angular/common/http';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
@@ -18,17 +18,24 @@ import {LayoutModule} from '@angular/cdk/layout';
 import {
   MatButtonModule,
   MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
   MatGridListModule,
   MatIconModule,
+  MatInputModule,
   MatListModule,
   MatMenuModule,
+  MatRadioModule,
+  MatSelectModule,
   MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {WeatherService} from './weather.service';
-import { WeatherComponent } from './weather/weather.component';
+import {WeatherComponent} from './weather/weather.component';
 import {firebaseConfig} from '../environments/environment.prod';
+import {DartComponent} from './dart/dart.component';
+import {AddUserDialogComponent} from './add-user-dialog/add-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,11 +45,15 @@ import {firebaseConfig} from '../environments/environment.prod';
     HomeComponent,
     NavbarComponent,
     DashboardComponent,
-    WeatherComponent
+    WeatherComponent,
+    DartComponent,
+    AddUserDialogComponent
   ],
+  entryComponents: [AddUserDialogComponent],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
@@ -57,7 +68,12 @@ import {firebaseConfig} from '../environments/environment.prod';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [
     AuthGuardService,

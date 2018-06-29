@@ -1,3 +1,19 @@
 .weather-card {
+  background: url("../../assets/images/munich.jpg") no-repeat;
+  background-size: auto;
+  max-width: 640px;
+font-weight: bold;
+}
 
+mat-card-title h2 {
+  font-size: 30px;
+}
+
+.weather-card-content h1 {
+  font-size: 30px;
+}
+
+.weather-card-content h1,
+.weather-card-content div{
+  text-align: right;
 }

@@ -1,0 +1,12 @@
+mat-radio-button ~ mat-radio-button {
+  padding-left: 16px;
+}
+
+mat-form-field ~ mat-form-field {
+  padding-left: 16px;
+}
+
+mat-label {
+  margin-bottom: 10px;
+}
+

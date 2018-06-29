@@ -17,7 +17,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.weather.getCityWeatherByName('munich').then(weatherState => {
-        this.temp = weatherState.main.temp;
+        this.temp = Math.round(weatherState.main.temp);
         this.maxtemp = weatherState.main.temp_max;
         this.mintemp = weatherState.main.temp_min;
       }

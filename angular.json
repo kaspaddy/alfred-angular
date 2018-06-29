@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "myAngularApp": {
+    "alfredAngular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/myAngularApp",
+            "outputPath": "dist/alfredAngular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -53,18 +53,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "myAngularApp:build"
+            "browserTarget": "alfredAngular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "myAngularApp:build:production"
+              "browserTarget": "alfredAngular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "myAngularApp:build"
+            "browserTarget": "alfredAngular:build"
           }
         },
         "test": {
@@ -101,7 +101,7 @@
         }
       }
     },
-    "myAngularApp-e2e": {
+    "alfredAngular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -109,11 +109,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "myAngularApp:serve"
+            "devServerTarget": "alfredAngular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "myAngularApp:serve:production"
+              "devServerTarget": "alfredAngular:serve:production"
             }
           }
         },
@@ -129,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "myAngularApp"
+  "defaultProject": "alfredAngular"
 }

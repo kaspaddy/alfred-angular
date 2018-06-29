@@ -1,0 +1,10 @@
+<div mat-dialog-content>
+  <p>Neuen User anlegen</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="user">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn" (click)="onNoClick()">No Thanks</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="user" cdkFocusInitial>Ok</button>
+</div>

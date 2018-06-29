@@ -1,0 +1,56 @@
+<div class="form-container" id="toolbar">
+
+  <mat-card>
+    <mat-card-title>
+      Dart Settings
+    </mat-card-title>
+    <mat-card-content>
+
+      <mat-label>Spieler:</mat-label>
+      <div>
+        <mat-form-field>
+          <mat-select [(ngModel)]="player1" placeholder="Player1" [formControl]="player1Control" required>
+            <mat-option *ngFor="let player of players" [value]="player.name">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="player1Control.hasError('required')">Please choose a Player</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select [(ngModel)]="player2" placeholder="Player2" [formControl]="player2Control" required>
+            <mat-option   *ngFor="let player of players" [value]="player.name">
+              {{player.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="player2Control.hasError('required')">Please choose a Player</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-label>Spielmodus:</mat-label>
+      <div>
+        <mat-radio-group>
+          <mat-radio-button [checked]="true" value="1">301</mat-radio-button>
+          <mat-radio-button value="2">401</mat-radio-button>
+          <mat-radio-button value="3">501</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div *ngIf="player1 && player2">
+        <mat-label>Starter:</mat-label>
+        <div>
+        <mat-radio-group>
+          <mat-radio-button [checked]="true" value="1">{{player1}}</mat-radio-button>
+          <mat-radio-button value="2">{{player2}}</mat-radio-button>
+        </mat-radio-group>
+        </div>
+      </div>
+
+    </mat-card-content>
+    <mat-card-footer>
+      <button mat-raised-button color="primary" (click)="start()">Los</button>
+    </mat-card-footer>
+  </mat-card>
+
+  <button mat-fab color="primary" title="neuer User" (click)="addUser()">+</button>
+</div>
